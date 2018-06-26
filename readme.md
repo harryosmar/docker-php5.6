@@ -1,4 +1,7 @@
-# How to run
+# Docker PHP5.6
+with : `composer` & `git`
+
+## How to run
 
 ```
 docker run -t -d harryosmar/php56:v1
