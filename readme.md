@@ -4,7 +4,7 @@ with : `composer` & `git`
 ## How to run
 
 ```
-docker run -t -d harryosmar/php56:v1
+docker run -t -d harryosmar/php56:latest
 ```
 
 ## List of Modules
