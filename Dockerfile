@@ -29,6 +29,8 @@ RUN pecl install memcached-2.2.0
 
 RUN docker-php-ext-configure intl
 
+RUN echo "www-data ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
 RUN docker-php-ext-install gd mcrypt mysql mysqli pdo pdo_mysql mbstring bcmath intl zip
 
 RUN curl -sS https://getcomposer.org/installer | php \
