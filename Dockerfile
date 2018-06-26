@@ -19,13 +19,16 @@ RUN apt-get update && apt-get install -y \
 	libpng-dev \
     libmemcached-dev \
     libicu-dev \
-    g++
-    
+    g++ \
+    zip \
+    unzip \
+    bzip2
+
 RUN pecl install memcached-2.2.0
 
 RUN docker-php-ext-configure intl
 
-RUN docker-php-ext-install gd mcrypt mysqli pdo pdo_mysql mbstring bcmath intl
+RUN docker-php-ext-install gd mcrypt mysqli pdo pdo_mysql mbstring bcmath intl zip
 
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
