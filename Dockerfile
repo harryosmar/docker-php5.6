@@ -10,6 +10,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # install OS packages
 RUN apt-get update && apt-get install -y \
+    sudo \
     git \
     build-essential \
     zlib1g-dev \
@@ -28,7 +29,7 @@ RUN pecl install memcached-2.2.0
 
 RUN docker-php-ext-configure intl
 
-RUN docker-php-ext-install gd mcrypt mysqli pdo pdo_mysql mbstring bcmath intl zip
+RUN docker-php-ext-install gd mcrypt mysql mysqli pdo pdo_mysql mbstring bcmath intl zip
 
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \

@@ -51,6 +51,7 @@ xml
 xmlreader
 xmlwriter
 zlib
+zip
 
 [Zend Modules]
 ```
